@@ -1,0 +1,920 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="ndry93 (generated)" id="1563025130292-1">
+        <createTable tableName="customer">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="city_of_birth" type="VARCHAR(255)"/>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="postal_code" type="VARCHAR(255)"/>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+            <column name="test2" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-2">
+        <createTable tableName="employee">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="employee_num" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="city_of_birth" type="VARCHAR(255)"/>
+            <column name="current_address" type="VARCHAR(255)"/>
+            <column name="current_city" type="VARCHAR(255)"/>
+            <column name="start_date" type="date"/>
+            <column name="end_date" type="date"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="position" type="VARCHAR(200)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+            <column name="city" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-3">
+        <createTable tableName="employee_attendance">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="employee_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attendance_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attendance_type" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-4">
+        <createTable tableName="employee_salary">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="employee_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salary_type" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salary" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-5">
+        <createTable tableName="lookup">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="lookup_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lookup_desc" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-6">
+        <createTable tableName="lookup_detail">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="lookup_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value1" type="VARCHAR(255)"/>
+            <column name="value2" type="VARCHAR(255)"/>
+            <column name="value3" type="VARCHAR(255)"/>
+            <column name="value4" type="VARCHAR(255)"/>
+            <column name="value5" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-7">
+        <createTable tableName="mst_university">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="university_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="university_address" type="VARCHAR(255)"/>
+            <column name="university_city" type="VARCHAR(255)"/>
+            <column name="university_phone" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-8">
+        <createTable tableName="product_pictures">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="product_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picture_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picture_description" type="VARCHAR(255)"/>
+            <column name="picture_url" type="VARCHAR(255)"/>
+            <column name="picture_data" type="BLOB"/>
+            <column name="file_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="folder_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-9">
+        <createTable tableName="products">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="product_code" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_description" type="VARCHAR(255)"/>
+            <column name="product_type" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="selling_price" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hpp" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="size_lower" type="VARCHAR(10)"/>
+            <column name="size_upper" type="VARCHAR(10)"/>
+            <column name="notes" type="VARCHAR(255)"/>
+            <column name="tags" type="VARCHAR(255)"/>
+            <column name="display_picture_url" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-10">
+        <createTable tableName="role">
+            <column autoIncrement="true" name="role_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-11">
+        <createTable tableName="sales">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="trx_num" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trx_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trx_notes" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sales_type" type="VARCHAR(50)"/>
+            <column name="pickup_date" type="date"/>
+            <column name="return_date" type="date"/>
+            <column name="occassion_type" type="VARCHAR(50)"/>
+            <column name="event_date" type="date"/>
+            <column name="event_location" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-12">
+        <createTable tableName="seq_txn">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="txn_num" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="seq_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-13">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="user_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-14">
+        <createTable tableName="user_activities_log">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activity_type" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activity_description" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attribute1" type="VARCHAR(255)"/>
+            <column name="attribute2" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-15">
+        <createTable tableName="user_role">
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-16">
+        <createIndex indexName="fk_role_id" tableName="user_role">
+            <column name="role_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-17">
+        <createIndex indexName="fk_user" tableName="user_role">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-18">
+        <createIndex indexName="idx_employee_id" tableName="employee_attendance">
+            <column name="employee_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-19">
+        <createIndex indexName="idx_employee_id2" tableName="employee_salary">
+            <column name="employee_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-20">
+        <createIndex indexName="idx_lookup_detail" tableName="lookup_detail">
+            <column name="lookup_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-21">
+        <createIndex indexName="idx_lookup_name" tableName="lookup">
+            <column name="lookup_name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-22">
+        <createIndex indexName="idx_product_id2" tableName="product_pictures">
+            <column name="product_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-23">
+        <createIndex indexName="idx_user_id1" tableName="user_activities_log">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-24">
+        <addForeignKeyConstraint baseColumnNames="employee_id" baseTableName="employee_attendance" constraintName="fk_employee_id" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-25">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_pictures" constraintName="fk_product_id2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="products" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-26">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_role" constraintName="fk_role_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="role_id" referencedTableName="role" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-27">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_role" constraintName="fk_user" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="user_id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-28">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_activities_log" constraintName="fk_user_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="user_id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-29">
+        <addForeignKeyConstraint baseColumnNames="employee_id" baseTableName="employee_salary" constraintName="fkey_emp_id01" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025130292-30">
+        <addForeignKeyConstraint baseColumnNames="lookup_id" baseTableName="lookup_detail" constraintName="fkey_lookup_id" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="lookup" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-1">
+        <createTable tableName="customer">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="city_of_birth" type="VARCHAR(255)"/>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="postal_code" type="VARCHAR(255)"/>
+            <column name="city" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-2">
+        <createTable tableName="employee">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="employee_num" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="date_of_birth" type="date"/>
+            <column name="city_of_birth" type="VARCHAR(255)"/>
+            <column name="current_address" type="VARCHAR(255)"/>
+            <column name="current_city" type="VARCHAR(255)"/>
+            <column name="start_date" type="date"/>
+            <column name="end_date" type="date"/>
+            <column name="email" type="VARCHAR(255)"/>
+            <column name="phone" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="position" type="VARCHAR(200)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+            <column name="city" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-3">
+        <createTable tableName="employee_attendance">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="employee_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attendance_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attendance_type" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-4">
+        <createTable tableName="employee_salary">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="employee_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salary_type" type="VARCHAR(200)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="salary" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-5">
+        <createTable tableName="lookup">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="lookup_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="lookup_desc" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-6">
+        <createTable tableName="lookup_detail">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="lookup_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="value1" type="VARCHAR(255)"/>
+            <column name="value2" type="VARCHAR(255)"/>
+            <column name="value3" type="VARCHAR(255)"/>
+            <column name="value4" type="VARCHAR(255)"/>
+            <column name="value5" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-7">
+        <createTable tableName="mst_university">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="university_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="university_address" type="VARCHAR(255)"/>
+            <column name="university_city" type="VARCHAR(255)"/>
+            <column name="university_phone" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-8">
+        <createTable tableName="product_pictures">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="product_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picture_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="picture_description" type="VARCHAR(255)"/>
+            <column name="picture_url" type="VARCHAR(255)"/>
+            <column name="picture_data" type="BLOB"/>
+            <column name="file_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="folder_name" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-9">
+        <createTable tableName="products">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="product_code" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="product_description" type="VARCHAR(255)"/>
+            <column name="product_type" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="selling_price" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="hpp" type="DOUBLE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="size_lower" type="VARCHAR(10)"/>
+            <column name="size_upper" type="VARCHAR(10)"/>
+            <column name="notes" type="VARCHAR(255)"/>
+            <column name="tags" type="VARCHAR(255)"/>
+            <column name="display_picture_url" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-10">
+        <createTable tableName="role">
+            <column autoIncrement="true" name="role_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="role" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-11">
+        <createTable tableName="sales">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="trx_num" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trx_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="trx_notes" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="sales_type" type="VARCHAR(50)"/>
+            <column name="pickup_date" type="date"/>
+            <column name="return_date" type="date"/>
+            <column name="occassion_type" type="VARCHAR(50)"/>
+            <column name="event_date" type="date"/>
+            <column name="event_location" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-12">
+        <createTable tableName="seq_txn">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="txn_num" type="VARCHAR(255)">
+                <constraints nullable="false" unique="true"/>
+            </column>
+            <column name="seq_name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-13">
+        <createTable tableName="user">
+            <column autoIncrement="true" name="user_id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="password" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="VARCHAR(255)"/>
+            <column name="last_name" type="VARCHAR(255)"/>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="datetime"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-14">
+        <createTable tableName="user_activities_log">
+            <column autoIncrement="true" name="id" type="INT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activity_type" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activity_description" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="attribute1" type="VARCHAR(255)"/>
+            <column name="attribute2" type="VARCHAR(255)"/>
+            <column defaultValueNumeric="1" name="enable" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_by" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="updated_by" type="VARCHAR(255)"/>
+            <column name="updated_date" type="date"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-15">
+        <createTable tableName="user_role">
+            <column name="user_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="role_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-16">
+        <createIndex indexName="fk_role_id" tableName="user_role">
+            <column name="role_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-17">
+        <createIndex indexName="fk_user" tableName="user_role">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-18">
+        <createIndex indexName="idx_employee_id" tableName="employee_attendance">
+            <column name="employee_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-19">
+        <createIndex indexName="idx_employee_id2" tableName="employee_salary">
+            <column name="employee_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-20">
+        <createIndex indexName="idx_lookup_detail" tableName="lookup_detail">
+            <column name="lookup_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-21">
+        <createIndex indexName="idx_lookup_name" tableName="lookup">
+            <column name="lookup_name"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-22">
+        <createIndex indexName="idx_product_id2" tableName="product_pictures">
+            <column name="product_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-23">
+        <createIndex indexName="idx_user_id1" tableName="user_activities_log">
+            <column name="user_id"/>
+        </createIndex>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-24">
+        <addForeignKeyConstraint baseColumnNames="employee_id" baseTableName="employee_attendance" constraintName="fk_employee_id" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-25">
+        <addForeignKeyConstraint baseColumnNames="product_id" baseTableName="product_pictures" constraintName="fk_product_id2" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="products" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-26">
+        <addForeignKeyConstraint baseColumnNames="role_id" baseTableName="user_role" constraintName="fk_role_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="role_id" referencedTableName="role" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-27">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_role" constraintName="fk_user" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="user_id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-28">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="user_activities_log" constraintName="fk_user_id" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="user_id" referencedTableName="user" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-29">
+        <addForeignKeyConstraint baseColumnNames="employee_id" baseTableName="employee_salary" constraintName="fkey_emp_id01" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="employee" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025205049-30">
+        <addForeignKeyConstraint baseColumnNames="lookup_id" baseTableName="lookup_detail" constraintName="fkey_lookup_id" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="CASCADE" referencedColumnNames="id" referencedTableName="lookup" validate="true"/>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025361313-1">
+        <insert tableName="role">
+            <column name="role_id" valueNumeric="1"/>
+            <column name="role" value="ADMIN"/>
+        </insert>
+        <insert tableName="role">
+            <column name="role_id" valueNumeric="2"/>
+            <column name="role" value="USER"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025361313-2">
+        <insert tableName="user">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="password" value="$2a$10$oGmAM7PKoxQ6nWxhSg.QyOjQr4xENAy9XEdYse.gqmodkMTXJyhHW"/>
+            <column name="first_name" value="Hendry"/>
+            <column name="last_name" value="Yuwono"/>
+            <column name="email" value="hendry.yuwono10@gmail.com"/>
+            <column name="enable" valueNumeric="1"/>
+            <column name="created_by" value="gaea"/>
+            <column name="created_date" valueDate="2019-07-13T20:26:22"/>
+            <column name="updated_by"/>
+            <column name="updated_date"/>
+        </insert>
+        <insert tableName="user">
+            <column name="user_id" valueNumeric="2"/>
+            <column name="password" value="$2a$10$oGmAM7PKoxQ6nWxhSg.QyOjQr4xENAy9XEdYse.gqmodkMTXJyhHW"/>
+            <column name="first_name" value="Admin"/>
+            <column name="last_name" value="Gaea"/>
+            <column name="email" value="admingaea@gmail.com"/>
+            <column name="enable" valueNumeric="1"/>
+            <column name="created_by" value="gaea"/>
+            <column name="created_date" valueDate="2019-07-13T00:00:00"/>
+            <column name="updated_by"/>
+            <column name="updated_date"/>
+        </insert>
+    </changeSet>
+    <changeSet author="ndry93 (generated)" id="1563025361313-3">
+        <insert tableName="user_role">
+            <column name="user_id" valueNumeric="1"/>
+            <column name="role_id" valueNumeric="1"/>
+        </insert>
+        <insert tableName="user_role">
+            <column name="user_id" valueNumeric="2"/>
+            <column name="role_id" valueNumeric="1"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

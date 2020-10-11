@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Generate Liquibase ChangeLog</actionName>
+            <displayName>Generate Liquibase ChangeLog</displayName>
+            <goals>
+                <goal>liquibase:generateChangeLog</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Liquibase Update</actionName>
+            <displayName>Liquibase Update</displayName>
+            <goals>
+                <goal>liquibase:update</goal>
+                
+            </goals>
+        </action>
+    </actions>
